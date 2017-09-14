@@ -1,0 +1,4 @@
+@mixin transparentize($color, $background) {
+  $percent: alpha($color) * 100%;
+  $background: $color;
+}

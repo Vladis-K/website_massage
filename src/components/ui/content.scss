@@ -1,0 +1,926 @@
+@import './colors.scss';
+@import './animation.scss';
+@import './mixins.scss';
+@import '../logo/Logo.scss';
+@import './fonts/fonts.css';
+@import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+
+//General settings
+
+body {
+  font-family: 'museo_sans_cyrl500','Arial', sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+//Upper navbar
+.upper-nav{
+  background-color: $colorNavbar;
+  padding: 18px 25px 10px;
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px 18px;
+  }
+
+  .mobile-menu {
+    &__show{
+      & > i {
+        @media only screen and (max-width: 767px) {
+          color: $colorDefault;
+          font-size: 7vw;
+        }
+        @media only screen and (max-width: 450px) {
+          font-size: 10vw;
+        }
+      }
+    }
+  }
+}
+
+//Navbar
+nav{
+  background-color: $colorBgCard;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px 1px rgba(51, 51, 51, 0.3);
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 0 30px;
+  }
+
+  ul.items{
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+
+    @media only screen and (min-width: 992px) and (max-width: 1439px) {
+      width: auto;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 22px;
+      padding-bottom: 16px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 0 !important;
+      width: calc(90% - 30px);
+    }
+  }
+
+  //Menu
+  .menu-item{
+    padding: 30px 10px 34px;
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend .transition-all;
+    opacity: 1;
+
+    &:hover:not(.focused){
+      @extend .transition-all;
+      opacity: .5;
+    }
+    &:focus{
+      outline: none;
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+      width: 20vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      width: 25%;
+      padding: 0;
+    }
+
+    &__logo{
+      height: auto;
+      @media only screen and (min-width: 768px) and (max-width: 1199px) {
+        display: flex;
+      }
+
+      & > img {
+        height: 50%;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        height: 27px;
+        & > img {
+          height: 50%;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        height: 27px;
+        & > img {
+          height: 65%;
+        }
+      }
+    }
+    &__link{
+      width: auto;
+      color: $colorPartnerText;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding-left: 7px;
+
+      @media only screen and  (max-width: 1199px) {
+        padding-left: 15px;
+        font-size: 16px;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        width: 80px;
+        white-space: nowrap;
+        padding-left: 10px;
+        font-size: 1.4vw;
+      }
+
+      @media only screen and (max-width: 767px) {
+        width: 70px;
+        padding-left: 0;
+        font-size: 2vw;
+        white-space: normal;
+      }
+
+      @media only screen and (max-width: 450px) {
+        width: 70px;
+        font-size: 3vw;
+        white-space: normal;
+      }
+    }
+  }
+
+}
+
+.not-active{
+  cursor: pointer;
+}
+
+.focused{
+  position: relative;
+  color: $colorInfo !important;
+  font-weight: 700;
+}
+
+.items > .focused{
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    border: 10px solid transparent;
+    border-top: 10px solid $colorBgCard;
+  }
+
+  @media only screen and (max-width: 991px) {
+    &:after {
+      bottom: -35px;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    &:after {
+      bottom: -35px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 36%;
+      bottom: -37px;
+      border: 10px solid transparent;
+      border-top: 10px solid $colorBgCard;
+    }
+  }
+
+
+}
+
+//Content
+.content{
+  text-align: center;
+  padding: 0 15px;
+
+  &__links{
+    padding: 63px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding: 52px 0 62px;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+      text-align: center;
+      padding: 15px 0 15px;
+      flex-direction: column;
+    }
+
+    .content-link > a {
+      color: $colorCatalog;
+      font-size: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      @extend .transition-all;
+      opacity: 1;
+
+      &:hover{
+        @extend .transition-all;
+        opacity: .5;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        font-size: 13px;
+        line-height: 19px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+    }
+    &_slash{
+      color: $colorCatalog;
+      font-size: 18px;
+      padding: 0 8px;
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        font-size: 24px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        display: none;
+      }
+
+    }
+  }
+  &__description{
+    font-family: 'museo_sans_cyrl300','Arial', sans-serif;
+    width: 40vw;
+    padding: 54px 0 50px;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    color: $colorFooter;
+    line-height: 1.86;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+  }
+  .active-link, .active-link > a {
+    font-family: 'museo_sans_cyrl900','Arial', sans-serif;
+    color: $colorInfo;
+  }
+  .active-link > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .link-logo{
+    padding: 0 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: row;
+    }
+    & > span > img {
+      margin: 0 3px;
+      width: 20px;
+    }
+    .link-logo-data{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      bottom: 2px;
+      padding-left: 5px;
+      & > span > img {
+        width: 32px;
+      }
+      @media only screen and (max-width: 767px) {
+        padding-left: 0;
+        flex-direction: row;
+        align-items: center;
+        & > span > img {
+          width: 42px;
+        }
+      }
+    }
+  }
+}
+
+//Card
+
+
+.tickets-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+
+
+.ticket{
+  position: relative;
+  padding: 15px 1px 155px;
+  width: 366px;
+  margin: 0 7.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $colorBgCard;
+  box-shadow: 0 0 10px 1px rgba(115, 115, 115, 0.3);
+
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    width: 40%;
+    margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    margin: 0 0 30px;
+    padding-bottom: 65px;
+  }
+
+  &__popular{
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    color: $colorActive;
+    text-transform: uppercase;
+    font-size: 20px;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      font-size: 17px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__info{
+    font-family: 'museo_sans_cyrl900','Arial', sans-serif;
+    font-size: 20px;
+    color: $colorInfo;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: 1199px) and (max-width: 1440px) {
+      letter-spacing: -1px;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      white-space: nowrap;
+      font-size: 17px;
+    }
+    @media only screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__amount{
+    padding-top: 25px;
+    color: $colorInfo;
+    font-family: 'museo_sans_cyrl700','Arial', sans-serif;
+    font-size: 60px;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 10px;
+      font-size: 50px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 5px;
+      font-size: 46px;
+    }
+  }
+
+  &__save{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: $colorSave;
+    font-size: 14px;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 5px;
+      padding-bottom: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 8px;
+      font-size: 10px;
+      padding-bottom: 1px;
+    }
+  }
+  &__typing{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  &__date{
+    color: $colorInfo;
+    font-size: 18px;
+    padding-bottom: 50px;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding-bottom: 22px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+      padding-bottom: 22px;
+    }
+  }
+  .date-active{
+    @media only screen and (max-width: 767px) {
+      padding-bottom: 42px;
+    }
+  }
+  &__list{
+    text-align: left;
+    padding: 0 35px 0 58px;
+
+    @media only screen and (max-width: 1199px) {
+      padding: 0 20px;
+    }
+
+    &_item{
+      position: relative;
+      display: flex;
+      padding-bottom: 20px;
+    }
+    .ticket-dot{
+      position: relative;
+      top: -2px;
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background-color: $colorInfo;
+      border-radius: 50%;
+      margin: 0 12px 0 0;
+    }
+    .ticket-sign{
+      font-family: 'museo_sans_cyrl300','Arial', sans-serif;
+      color: $colorFooter;
+      line-height: 19px;
+    }
+  }
+  &__book{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $colorInfo;
+    .ticket-btn{
+      font-family: 'museo_sans_cyrl900','Arial', sans-serif;
+      width: 100%;
+      padding: 23px 0;
+      background-color: $colorInfo;
+      color: $colorTExtButton;
+      font-size: 20px;
+      text-transform: uppercase;
+      border: 1px solid $colorInfo;
+      cursor: pointer;
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        font-size: 15px;
+        padding: 13px 0;
+      }
+
+      @media only screen and (max-width: 767px) {
+        font-size: 15px;
+        padding: 13px 0;
+      }
+    }
+    .active-btn{
+      background-color: $colorActive !important;
+      border: 1px solid  $colorActive !important;
+    }
+  }
+
+}
+
+//Ticket
+.ticket-enlarged{
+  padding-top: 36px;
+  padding-bottom: 175px;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    padding-top: 45px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 65px;
+  }
+}
+
+.success-btn{
+  font-family: 'museo_sans_cyrl900','Arial', sans-serif;
+  border: 1px solid $colorInfo;
+  color: $colorInfo;
+  background-color: transparent;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 16px;
+  }
+}
+
+.sm-btn{
+  width: 200px;
+  height: 40px;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    width: 250px;
+    height: 55px;
+  }
+
+}
+
+//Partners content
+.partners{
+  padding-top: 145px;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 77px 75px 0;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 56px;
+  }
+  &__sign{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $colorPartnerText;
+    @media only screen and (max-width: 767px) {
+      font-size: 10px;
+    }
+  }
+  &__section{
+    display: flex;
+
+    @media only screen and (max-width: 767px) {
+      justify-content: center;
+      &:nth-of-type(1){
+        padding-bottom: 30px;
+      }
+    }
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+    padding-bottom: 80px;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 35px;
+      padding-bottom: 52px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      padding-bottom: 58px;
+      align-items: center;
+    }
+
+    &_logo{
+      margin: 0 19px;
+      width: 7vw;
+      & > img {
+        width: 100%;
+      }
+
+
+      @media only screen and (max-width: 1199px) {
+        width: 10vw;
+        & > img {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        width: 95px;
+        & > img {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        margin: 0 10px;
+        width: 75px;
+        & > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+footer{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: $colorFooter;
+  text-align: center;
+  .footer-logo > a {
+    @extend .transition-all;
+    opacity: 1;
+    &:hover {
+      @extend .transition-all;
+      opacity: .5;
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .footer-logo{
+      & > a > img{
+        width: 14vw;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .footer-logo{
+      & > a > img{
+        width: 235px;
+      }
+    }
+  }
+
+  .footer-menu {
+    padding-top: 15px;
+
+    &__list{
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+
+      @media only screen and (max-width: 767px) {
+        justify-content: space-between;
+        max-width: 290px;
+        margin: auto;
+      }
+
+      & > li {
+        padding: 0 10px;
+        @media only screen and (max-width: 767px) {
+          padding: 0;
+        }
+        & > a {
+          font-family: 'museo_sans_cyrl300','Arial', sans-serif;
+          color: $colorDefault;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 10px;
+          @extend .transition-all;
+          opacity: 1;
+          &:hover{
+            @extend .transition-all;
+            opacity: .5;
+          }
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .footer-icons{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 290px;
+      margin: auto;
+      padding-top: 35px;
+      justify-content: space-between;
+    }
+    & > div > a {
+      .social-icon{
+        width: 40px;
+        font-size: 20px;;
+        color: $colorDefault;
+        @extend .transition-all;
+        opacity: 1;
+        &:hover{
+          @extend .transition-all;
+          opacity: .5;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          width: 60px;
+        }
+        @media only screen and (max-width: 767px) {
+          width: 20px;
+        }
+      }
+    }
+  }
+  .general-info{
+    padding-top: 25px;
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 35px;
+    }
+    &__list{
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      padding-top: 10px;
+      a {
+        @extend .transition-all;
+        opacity: 1;
+        &:hover{
+          @extend .transition-all;
+          opacity: .5;
+        }
+      }
+
+
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      & > div {
+
+        @media only screen and (max-width: 991px) {
+          padding: 0 3px;
+        }
+        @media only screen and (max-width: 767px) {
+          padding: 0 3px;
+        }
+        a {
+          font-family: 'museo_sans_cyrl300','Arial', sans-serif;
+          color: $colorDefault;
+          text-decoration: none;
+          font-size: 12px;
+        }
+      }
+    }
+    &__conditions{
+      position: relative;
+      margin: 0 7px;
+
+      @media only screen and (max-width: 991px) {
+        margin: 0;
+      }
+    }
+
+    .general-info-terms{
+      padding: 0 7px;
+
+      @media only screen and (max-width: 991px) {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      @media only screen and (max-width: 767px) {
+        padding-right: 5px;
+        padding-left: 0;
+      }
+
+    }
+    .streak{
+      border-left: 1px solid $colorDefault;
+      font-size: 10px;
+      }
+    }
+    .general-info-policy{
+      position: relative;
+      padding: 0 7px;
+
+      @media only screen and (max-width: 991px) {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      @media only screen and (max-width: 767px) {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+    .general-info-copyright{
+    }
+  }
+}
+
+.collapsed-card{
+  padding-bottom: 45px !important;
+}
+
+
+
+//Button
+button{
+  @extend .transition-all;
+  opacity: 1;
+  &:hover{
+    @extend .transition-all;
+    opacity: .5;
+  }
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+}
+
+//Input
+input[type="text"]{
+  width: 100%;
+  text-align: center;
+  background-color: $colorDefault;
+  height: 15px;
+  border: none;
+  box-shadow: inset 0 0 8px $colorPartnerText;
+}
+input::-webkit-input-placeholder{
+  color: $colorSave;
+}
+input:focus{
+  outline-width: 1px;
+  outline-color: $colorCatalog;
+}
+
+//Classes for showing/hiding elements
+[class~="hidden-content"]{
+  display: none;
+}
+
+
+[class~="hidden-mobile"]{
+  @media only screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+[class~="hidden-desktop"]{
+  @media only screen and (min-width: 767px) {
+    display: none !important;
+  }
+}
+
+[class~="hidden-laptop"]{
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    display: none !important;
+  }
+}
+

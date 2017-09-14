@@ -1,0 +1,23 @@
+.transition-all, .hrn-logo > a {
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear; }
+
+.transition-color {
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear; }
+
+.transition-bg-color {
+  transition: background-color 0.5s linear;
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear; }
+
+.hrn-logo > a > img {
+  width: 222px; }
+  @media only screen and (max-width: 767px) {
+    .hrn-logo > a > img {
+      width: 34vw; } }
+  @media only screen and (max-width: 450px) {
+    .hrn-logo > a > img {
+      width: 54vw; } }

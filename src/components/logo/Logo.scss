@@ -1,0 +1,18 @@
+//Logo
+@import '../ui/animation.scss';
+
+.hrn-logo > a  {
+  @extend .transition-all;
+
+  & > img {
+    width: 222px;
+
+    @media only screen and (max-width: 767px) {
+      width: 34vw;
+    }
+
+    @media only screen and (max-width: 450px) {
+      width: 54vw;
+    }
+  }
+}
