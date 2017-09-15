@@ -1,0 +1,33 @@
+//Logo
+@import '../ui/animation.scss';
+@import '../ui/colors.scss';
+@import '../ui/mixins.scss';
+@import '../ui/fonts.scss';
+
+
+.m-logo {
+
+  &__pict{
+
+  }
+  &__sign{
+    @include nunitoSbold;
+    color: $colorPrimary;
+    font-size: 20px;
+    font-style: italic;
+  }
+  & > a  {
+    @extend .transition-all;
+    text-decoration: none;
+    & > img {
+      width: 30px;
+      @media only screen and (max-width: 767px) {
+
+      }
+      @media only screen and (max-width: 450px) {
+
+      }
+    }
+  }
+}
+

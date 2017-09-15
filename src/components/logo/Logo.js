@@ -1,12 +1,13 @@
 import React from 'react';
-import './Logo.scss';
+import './logo.css';
 
-import logo from '../../data/logo-hrn.png';
+import logoImg from './logo-m.svg';
 
 const Logo = () => (
-    <div className="hrn-logo">
-        <a href="//hrn.io">
-            <img src={logo} alt="HRN" />
+    <div className="m-logo">
+        <a href="//massage-baby.com.ua">
+            <img className="m-logo__pict" src={logoImg} alt="massage-for-baby" />
+            <span className="m-logo__sign">assage-baby</span>
         </a>
     </div>
 );

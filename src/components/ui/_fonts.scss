@@ -1,0 +1,42 @@
+@import url( 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700,800|Poppins:300,400,500,600,700');
+
+/* Nunito */
+$fontNunito: 'Nunito Sans', sans-serif;
+
+
+@mixin nunitoLight() {
+    font-family: $fontNunito;
+    font-weight: 300;
+}
+
+@mixin nunitoRegular() {
+    font-family: $fontNunito;
+    font-weight: 400;
+}
+
+@mixin nunitoSbold() {
+    font-family: $fontNunito;
+    font-weight: 600;
+}
+
+@mixin nunitoBold() {
+    font-family: $fontNunito;
+    font-weight: 700;
+}
+@mixin nunitoSBold() {
+    font-family: $fontNunito;
+    font-weight: 800;
+}
+
+/* Popins */
+$fontPopins: 'Poppins', sans-serif;
+
+@mixin popinsLight() {
+    font-family: $fontPopins;
+    font-weight: 300;
+}
+
+@mixin popinsRegular() {
+    font-family: $fontPopins;
+    font-weight: 400;
+}

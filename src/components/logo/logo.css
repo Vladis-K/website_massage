@@ -1,4 +1,5 @@
-.transition-all, .hrn-logo > a {
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700,800|Poppins:300,400,500,600,700");
+.transition-all, .m-logo > a {
   transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear; }
@@ -13,11 +14,16 @@
   -webkit-transition: background-color 0.5s linear;
   -moz-transition: background-color 0.5s linear; }
 
-.hrn-logo > a > img {
-  width: 222px; }
-  @media only screen and (max-width: 767px) {
-    .hrn-logo > a > img {
-      width: 34vw; } }
-  @media only screen and (max-width: 450px) {
-    .hrn-logo > a > img {
-      width: 54vw; } }
+/* Nunito */
+/* Popins */
+.m-logo__sign {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  color: #fddd01;
+  font-size: 20px;
+  font-style: italic; }
+
+.m-logo > a {
+  text-decoration: none; }
+  .m-logo > a > img {
+    width: 30px; }
