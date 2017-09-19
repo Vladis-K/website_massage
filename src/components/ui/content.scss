@@ -126,27 +126,19 @@ nav {
       & > .container {
         width: 100vw;
         display: flex;
-        .arrow-partner {
+        .arrow-company {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           cursor: pointer;
           width: 5%;
-        }
-        @media only screen and (max-width: 767px) {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          .arrow-partner_prev {
-            display: block;
-            padding-top: 12px;
-            & > img {
-              height: 34px;
-              transform: rotate(180deg);
-            }
+          &:hover{
+            opacity: .5;
           }
-          .arrow-partner_next {
-            display: block;
-            padding-top: 12px;
-            & > img {
-              height: 34px;
+          &__prev{
+            & > div > img {
+              transform: rotate(180deg);
             }
           }
         }
@@ -182,67 +174,108 @@ nav {
 
   //Slider Responds
   &__responds {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &_sign{
+      @include popinsLight;
+
+      text-align: center;
+      padding-bottom: 60px;
+      font-size: 54px;
+      color: $colorInputPrimary;
+    }
     &_slider {
       display: flex;
       justify-content: space-between;
       & > .container {
         width: 100vw;
         display: flex;
-        .arrow-partner {
+        .arrow-respond {
+          padding-top: 110px;
           cursor: pointer;
-          width: 5%;
+          width: 20%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &:focus{
+            outline: none;
+          }
+          &_prev > div > img {
+            transform: rotate(180deg);
+          }
         }
         & > .slick-slider {
-          width: 90%;
+          width: 60%;
           button[class~="slick-arrow"]{
             display: none !important;
           }
+
           //IMG
           .slider-content{
             text-align: center;
             &__image {
-              width: 200px;
+              width: 150px;
               margin: auto;
-              border-radius: 50%;
+              padding: 2px;
               & > img {
-                width: 100%;
+                width: 150px;
+                height: 135px;
+                border-radius: 50%;
+                user-select: none;
+                -webkit-user-drag: none;
+                border: 1px solid #e5e8ef;
               }
             }
+            &__name{
+              @include nunitoRegular;
+              padding: 20px 0;
+              font-size: 18px;
+              color: $colorInputPrimary;
+            }
+            &__comment{
+              width: 550px;
+              margin: auto;
+              font-size: 15px;
+              line-height: 24px;
+              color: transparentize($colorInputPrimary, 0.3);
+            }
           }
-
           //Dots
           .slick-dots {
+            @extend .transition-all;
+            padding-left: 0;
+            padding-top: 20px;
+            margin: 0;
             display: flex !important;
             justify-content: center;
             list-style-type: none !important;
-            padding-left: 0;
             & > li {
-              margin: 0 8px;
-            }
-            & > li {
-              cursor: pointer;
               display: block;
-              width: 10px;
-              height: 10px;
+              margin: 0 8px;
+              width: 12px;
+              height: 12px;
               border-radius: 50%;
               background-color: transparentize($colorSecondary, 0.8);
               & > button {
+                cursor: pointer;
                 opacity: 0;
                 display: block;
+                height: 12px;
               }
             }
             & > li.slick-active {
-              cursor: pointer;
               display: block;
-              width: 10px;
-              height: 10px;
+              margin: 0 8px;
+              width: 12px;
+              height: 12px;
               border-radius: 50%;
-              background-color: $colorWarning;
+              background-color: $colorSuccess;
               & > button {
+                cursor: pointer;
                 display: block;
                 opacity: 0;
+                width: 10px;
+                height: 12px;
               }
             }
           }
@@ -257,27 +290,41 @@ nav {
       }
     }
   }
-
 }
 
 
 
+//CERTIFICATES
 
 .certificate{
   background-color: $colorInputPrimary;
   padding: 40px 0 0;
   &__list {
     padding-top: 15px;
-    padding-bottom: 15px;
     &_slider {
       display: flex;
       justify-content: space-between;
       & > .container {
-        width: 100vw;
+        width: 1050px;
+        margin: auto;
         display: flex;
+        justify-content: space-between;
         .arrow-certificate {
           cursor: pointer;
-          width: 5%;
+          width: 35px;
+          height: 35px;
+          border: 2px solid $colorGrey;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          & > i {
+            padding-bottom: 3px;
+            padding-left: 3px;
+            font-size: 30px;
+            color: $colorGrey;
+          }
         }
         & > .slick-initialized {
           width: 90%;
@@ -292,7 +339,7 @@ nav {
               & > .slick-slide {
                 display: flex;
                 flex-direction: column;
-                padding-left: 200px;
+                //padding-left: 200px;
                 & > img {
                   width: 200px;
                 }
@@ -309,11 +356,23 @@ nav {
       width: 690px;
       & > img {
         width: 100%;
-        object-fit: cover;
-        object-position: 0 50%;
         outline: none;
         user-select: none;
       }
+    }
+  }
+  &__info{
+    margin-left: 30px;
+    &_title{
+      @include popinsLight;
+      font-size: 54px;
+      color: #fff;
+    }
+    &_about{
+      @include nunitoLight;
+      font-size: 24px;
+      line-height: 30px;
+      color: transparentize($colorDefault, .3);
     }
   }
 }
@@ -325,7 +384,7 @@ button.slick-prev, button.slick-next{
 }
 
 .question{
-  border: 1px solid orangered;
+  padding: 80px;
 }
 
 

@@ -18,6 +18,7 @@ import Baby3 from '../data/responds/baby_3.jpg';
 
 import Certificate1 from '../data/sertificates/IMG_4769.JPG';
 import Certificate2 from '../data/sertificates/IMG_4770.JPG';
+import Certificate3 from '../data/sertificates/IMG_4771.JPG';
 
 
 
@@ -40,8 +41,10 @@ class Content extends Component {
                 <div className="container content__partners">
                     <div className="content__partners_slider">
                         <div className="container">
-                            <div className="arrow-partner arrow-partner_prev">
-                                <img src={ArrowSlide} onClick={() => this.prevPartner()} />
+                            <div className="arrow-company arrow-company__prev">
+                                <div>
+                                    <img src={ArrowSlide} onClick={() => this.prevCompany()} />
+                                </div>
                             </div>
                             <Slider ref={c => this.partnerSlider = c } {...settings}>
                                 <div><img draggable={false} src={LogoSertif1} alt="" /></div>
@@ -50,8 +53,10 @@ class Content extends Component {
                                 <div><img draggable={false} src={LogoSertif4} alt="" /></div>
                                 <div><img draggable={false} src={LogoSertif5} alt="" /></div>
                             </Slider>
-                            <div className="arrow-partner arrow-partner_next">
-                                <img src={ArrowSlide} onClick={() => this.nextPartner()} />
+                            <div className="arrow-company arrow-company__next">
+                                <div>
+                                    <img src={ArrowSlide} onClick={() => this.nextCompany()} />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,11 +65,11 @@ class Content extends Component {
         );
     }
 
-    nextPartner() {
+    nextCompany() {
         this.partnerSlider.slickNext();
     }
 
-    prevPartner() {
+    prevCompany() {
         this.partnerSlider.slickPrev();
     }
 
@@ -74,7 +79,7 @@ class Content extends Component {
             var settings = {
                 autoplay: false,
                 infinite: true,
-                fade: false,
+                fade: true,
                 slidesToShow: 1,
                 responsive: [
                     {breakpoint: 768, settings: {arrows: true, dots: false, draggable: true} },
@@ -85,11 +90,11 @@ class Content extends Component {
 
             return (
                 <div className="certificate">
-                    <div className="container content__list">
+                    <div className="certificate__list">
                         <div className="certificate__list_slider">
                             <div className="container">
                                 <div className="arrow-certificate certificate_prev hidden-desktop">
-                                    <img src={ArrowSlide} onClick={() => this.prevCertificate()} />
+                                        <img src={ArrowSlide} onClick={() => this.prevCertificate()} />
                                 </div>
                                 <Slider ref={c => this.showSertificates = c } {...settings}>
                                     <div>
@@ -97,12 +102,9 @@ class Content extends Component {
                                             <div className="certificate__item_scan">
                                                <img className="home-page__campaigns_pict" src={Certificate1} alt="" />
                                            </div>
-                                            <div>
-                                                <div>Title</div>
-                                                <div>Description</div>
-                                                <div>
-                                                    <button>1 Apply!</button>
-                                                </div>
+                                            <div className="certificate__info">
+                                                <div className="certificate__info_title">Title</div>
+                                                <div className="certificate__info_about">Description</div>
                                             </div>
                                         </div>
                                     </div>
@@ -111,17 +113,27 @@ class Content extends Component {
                                             <div className="certificate__item_scan">
                                                 <img className="home-page__campaigns_pict" src={Certificate2} alt="" />
                                             </div>
-                                            <div>
-                                                <div>Title</div>
-                                                <div>Description</div>
-                                                <div>
-                                                    <button>2 Apply!</button>
-                                                </div>
+                                            <div className="certificate__info">
+                                                <div className="certificate__info_title">Title</div>
+                                                <div className="certificate__info_about">Description</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="certificate__item">
+                                            <div className="certificate__item_scan">
+                                                <img className="home-page__campaigns_pict" src={Certificate3} alt="" />
+                                            </div>
+                                            <div className="certificate__info">
+                                                <div className="certificate__info_title">Title</div>
+                                                <div className="certificate__info_about">Description</div>
                                             </div>
                                         </div>
                                     </div>
                                 </Slider>
-                                <div onClick={() => this.nextCertificate()} className="arrow-partner certificate_next">!NEXT!</div>
+                                <div onClick={() => this.nextCertificate()} className="arrow-certificate certificate_next">
+                                    <i className="fa fa-angle-right" aria-hidden="true"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -159,10 +171,13 @@ class Content extends Component {
         return (
             <div className="content__outer">
                 <div className="container content__responds">
+                    <div className="content__responds_sign">Reviews</div>
                     <div className="content__responds_slider">
                         <div className="container">
-                            <div className="arrow-partner arrow-partner_prev">
-                                <img src={ArrowSlide} onClick={() => this.prevTestimonial()} />
+                            <div className="arrow-respond arrow-respond_prev">
+                                <div>
+                                    <img src={ArrowSlide} onClick={() => this.prevTestimonial()} />
+                                </div>
                             </div>
                             <Slider ref={c => this.certSlider = c } {...settings}>
                                 <div className="slider-content">
@@ -175,20 +190,26 @@ class Content extends Component {
                                         which before massage is not done at all. After the first year the tone has
                                         bounced back and pulled straight Danya, became a sports small))
                                         We really enjoyed and a half months later, we again turned to Julia,
-                                        and went through another course of massage. Julia is very good with the children,
-                                        it is immediately noticeable. Very grateful to Julia for her work.
+                                        and went through another course of massage.
                                         Very good specialist and a man! With gratitude, Mariya and Danya!
                                     </div>
                                 </div>
                                 <div className="slider-content">
-                                    <div className="slider-content__image"><img draggable={false} src={Baby2} alt="" /></div>
-                                    <div className="slider-content__name">Natasha and Alina</div>
+                                    <div className="slider-content__image">
+                                        <img draggable={false} src={Baby2} alt="" />
+                                    </div>
+                                    <div className="slider-content__name">Natalia and Alina</div>
                                     <div className="slider-content__comment">
-                                        We did massage course with fitball and swimming. The child has become more dynamic and agile. Thanks Julia!
+                                        We did massage course with fitball and swimming.
+                                        Julia is very good with the children,
+                                        it is immediately noticeable. Very grateful to Julia for her work.
+                                        The child has become more dynamic and agile. Thanks!
                                     </div>
                                 </div>
                                 <div className="slider-content">
-                                    <div className="slider-content__image"><img draggable={false} src={Baby3} alt="" /></div>
+                                    <div className="slider-content__image">
+                                        <img draggable={false} src={Baby3} alt="" />
+                                    </div>
                                     <div className="slider-content__name">Irina and Max</div>
                                     <div className="slider-content__comment">
                                         We are very pleased with the massage! The results are seen after one week.
@@ -196,8 +217,10 @@ class Content extends Component {
                                     </div>
                                 </div>
                             </Slider>
-                            <div className="arrow-partner arrow-partner_next">
-                                <img src={ArrowSlide} onClick={() => this.nextTestimonial()} />
+                            <div className="arrow-respond arrow-respond_next">
+                                <div>
+                                    <img src={ArrowSlide} onClick={() => this.nextTestimonial()} />
+                                </div>
                             </div>
                         </div>
                     </div>
