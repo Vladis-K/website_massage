@@ -167,23 +167,32 @@ class Content extends Component {
                             <Slider ref={c => this.certSlider = c } {...settings}>
                                 <div className="slider-content">
                                     <div className="slider-content__image"><img draggable={false} src={Baby1} alt="" /></div>
-                                    <div className="slider-content__name">John F. (Product Manager)</div>
+                                    <div className="slider-content__name">Mariya & Danya</div>
                                     <div className="slider-content__comment">
-                                        "I have worked with the CongressBookers team on several accounts and each time they have overcome all my expectations."
+                                        We passed two courses massage. We had a small son tone,
+                                        the doctor will prescribe therapeutic massage. After the first course was
+                                        immediately result. In addition, my son began to lie on his stomach,
+                                        which before massage is not done at all. After the first year the tone has
+                                        bounced back and pulled straight Danya, became a sports small))
+                                        We really enjoyed and a half months later, we again turned to Julia,
+                                        and went through another course of massage. Julia is very good with the children,
+                                        it is immediately noticeable. Very grateful to Julia for her work.
+                                        Very good specialist and a man! With gratitude, Mariya and Danya!
                                     </div>
                                 </div>
                                 <div className="slider-content">
                                     <div className="slider-content__image"><img draggable={false} src={Baby2} alt="" /></div>
-                                    <div className="slider-content__name">John F. (Product Manager)</div>
+                                    <div className="slider-content__name">Natasha and Alina</div>
                                     <div className="slider-content__comment">
-                                        "I have worked with the CongressBookers team on several accounts and each time they have overcome all my expectations."
+                                        We did massage course with fitball and swimming. The child has become more dynamic and agile. Thanks Julia!
                                     </div>
                                 </div>
                                 <div className="slider-content">
                                     <div className="slider-content__image"><img draggable={false} src={Baby3} alt="" /></div>
-                                    <div className="slider-content__name">John F. (Product Manager)</div>
+                                    <div className="slider-content__name">Irina and Max</div>
                                     <div className="slider-content__comment">
-                                        "I have worked with the CongressBookers team on several accounts and each time they have overcome all my expectations."
+                                        We are very pleased with the massage! The results are seen after one week.
+                                        We would advise Julia, an experienced professional who knows how to deal with small children.
                                     </div>
                                 </div>
                             </Slider>

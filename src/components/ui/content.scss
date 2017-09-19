@@ -307,12 +307,12 @@ nav {
     display: flex;
     &_scan {
       width: 690px;
-      outline: none;
-      object-fit: cover;
-      object-position: 0 50%;
-      user-select: none;
       & > img {
         width: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        outline: none;
+        user-select: none;
       }
     }
   }

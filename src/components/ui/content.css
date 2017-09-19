@@ -246,13 +246,13 @@ nav {
   .certificate__item {
     display: flex; }
     .certificate__item_scan {
-      width: 690px;
-      outline: none;
-      object-fit: cover;
-      object-position: 0 50%;
-      user-select: none; }
+      width: 690px; }
       .certificate__item_scan > img {
-        width: 100%; }
+        width: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        outline: none;
+        user-select: none; }
 
 button.slick-prev, button.slick-next {
   display: none !important; }
