@@ -243,9 +243,9 @@ class Content extends Component {
         return (
             <div className="content">
                 { this.getPartners() }
-                <TypeMsg/>
+                 <TypeMsg/>
                  {this.showCertificates() }
-                <Question/>
+                 <GetServices/>
                 { this.getTestimonials() }
             </div>
         )
@@ -299,11 +299,150 @@ const TypeMsg = () => (
     </div>
 );
 
-const Question = () => (
-    <div className="question">
-        Question
-    </div>
-);
+class GetServices extends Component{
+
+    constructor(){
+        super();
+        this.state = {
+            shown: -1
+        };
+        this.collapseChange = this.collapseChange.bind(this);
+    }
+
+    collapseChange(shown) {
+        this.setState({
+            shown: this.state.shown === shown ? -1 : shown,
+        });
+    }
+
+    render(){
+        const shown = this.state.shown;
+        return(
+            <div className="services">
+                <div className="info-title">Services</div>
+                <div className="info-title-description">Different techniques of massage for your child</div>
+
+                <div className="services__depiction">
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(1)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Classic massage</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 1 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 1 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(2)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Relaxing massage</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 2 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 2 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(3)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Preventive massage</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 3 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 3 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(4)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Dynamic gymnastic</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 4 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 4 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(5)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Gymnastics on fitball</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 5 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 5 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(6)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Kids Swimming</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 6 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 6 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Our lessons start with Ducklings for children aged 3 up to 5 who are accompanied
+                                in the water with a responsible adult.  Your little superstar will be guided by a
+                                fully qualified swimming teacher and learn the basic skills of swimming through
+                                a range of games to help build water confidence.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="services__content">
+                        <div className="services__content_title">
+                            <a className="services__content_link" onClick={()=> this.collapseChange(7)}>
+                                <i className="fa fa-child icon-view" aria-hidden="true"/>
+                                <span>Therapeutic massage</span>
+                                <i className={`fa fa-angle-down icon-view ${shown === 7 ? 'icon-view-up' : ''}`} />
+                            </a>
+                        </div>
+                        <div className={`services__content_description ${shown === 7 ? '' : 'hidden-content'}`}>
+                            <div className="collapsed-info">
+                                Therapeutic massage is the manipulation of the soft tissue of whole body areas to bring
+                                about generalized improvements in health, such as relaxation or improved sleep,
+                                or specific physical benefits, such as relief of muscular aches and pains.​pains.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}   //Services block
+
+
 
 
 export default Content;

@@ -11,9 +11,9 @@
 
   }
   &__sign{
-    @include nunitoSbold;
+    @include nunitoBold;
     color: $colorPrimary;
-    font-size: 26px;
+    font-size: 35px;
     font-style: italic;
   }
   & > a  {

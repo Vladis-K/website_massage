@@ -20,9 +20,9 @@
   cursor: pointer; }
   .m-logo__sign {
     font-family: "Nunito Sans", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     color: #fddd01;
-    font-size: 26px;
+    font-size: 35px;
     font-style: italic; }
   .m-logo > a {
     text-decoration: none; }

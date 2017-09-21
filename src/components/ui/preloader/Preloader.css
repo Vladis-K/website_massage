@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700,800|Poppins:300,400,500,600,700");
+/* Nunito */
+/* Popins */
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+  .preloader__inner > i {
+    color: #60d712;
+    font-size: 30px; }

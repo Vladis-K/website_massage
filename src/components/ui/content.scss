@@ -118,8 +118,8 @@ nav {
     background-color: transparentize($colorInputPrimary, 0.95);
   }
   &__partners {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     &_slider {
       display: flex;
       justify-content: space-between;
@@ -159,7 +159,7 @@ nav {
                 justify-content: center;
                 align-items: center;
                 & > img {
-                  width: 200px;
+                  width: 160px;
                 }
                 @media only screen and (max-width: 767px) {
                   width: 320px;
@@ -396,6 +396,11 @@ button.slick-prev, button.slick-next{
     padding-top: 50px;
     display: flex;
     justify-content: center;
+
+    @media only screen and (min-width: 767px) {
+      flex-direction: column;
+    }
+
     .card {
       padding: 30px 25px;
       border-radius: 4px;
@@ -437,9 +442,88 @@ button.slick-prev, button.slick-next{
   border: 1px solid #2b7c8b;
 }
 
+.services{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 700px;
+  margin: auto;
+
+  & > .info-title-description {
+    text-align: center;
+  }
+
+  &__depiction{
+
+  }
+  &__content{
+    padding-top: 21px;
+    border-bottom: 1px solid #e5e8ef;
+    @extend .transition-all;
+    &_title{
+
+    }
+    &_link{
+      @extend .transition-all;
+      padding-bottom: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &:hover{
+        @extend .transition-all;
+        opacity: .6;
+      }
+      & > i:nth-of-type(1) {
+        position: relative;
+        bottom: 2px;
+        padding-right: 15px;
+      }
+      & > span {
+        font-size: 18px;
+        line-height: 20px;
+        color: #353d4c;
+      }
+      & > i:nth-of-type(2) {
+        padding: 0 10px;
+      }
+    }
+    &_description{
+      padding: 0 30px 20px;
+      .collapsed-info{
+        @extend .transition-all;
+        font-size: 14px;
+        color: rgba(53, 61, 76, 0.7);
+        line-height: 20px;
+      }
+    }
+  }
+
+  .icon-view{
+    font-size: 22px;
+    color: rgba(53, 61, 76, 0.4);
+    @extend .transition-all;
+  }
+  .icon-view-up {
+    transform: rotate(180deg);
+    @extend .transition-all;
+  }
+}
+
+
+//Footer
+.footer-outer{
+
+}
+
 footer {
-  height: 250px;
+  padding: 25px;
   background-color: $colorInputPrimary;
+  display: flex;
+  justify-content: space-between;
+  .google-map{
+    width: 400px;
+    height: 200px;
+  }
+
 }
 
 //Button
@@ -484,3 +568,10 @@ input:focus{
   }
 }
 
+[data-reactid="Massage"]{
+  width: 151px;
+  height: 80px;
+  background-color: #b277fe;
+  color: #60d712;
+  z-index: 10;
+}
