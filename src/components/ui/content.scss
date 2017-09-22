@@ -281,7 +281,7 @@ nav {
               width: 12px;
               height: 12px;
               border-radius: 50%;
-              background-color: $colorSuccess;
+              background-color: $colorPrimary;
               & > button {
                 cursor: pointer;
                 display: block;
@@ -549,6 +549,22 @@ footer {
   .google-map{
     width: 400px;
     height: 200px;
+  }
+  .google-m-logo{
+    @include nunitoBold;
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $colorPrimary;
+    border-radius: 50%;
+    background-color: transparentize($colorSecondary, .5);
+    color: $colorPrimary;
+    & > div > i {
+      font-size: 25px;
+    }
   }
 
 }

@@ -7,7 +7,12 @@ import './ui/content.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 
-const IconMassage = ({ text }) => <div className="">{text}</div>;
+const IconMassage = ({ text }) => (
+    <div className="google-m-logo">
+        <div>
+            <i className="fa fa-child icon-view" aria-hidden="true"/>{text}
+        </div>
+    </div>);
 
 class Footer extends Component {
     static defaultProps = {
@@ -29,7 +34,7 @@ class Footer extends Component {
                                 zoom={this.props.zoom}
                                 options={{ scrollwheel: false }}
                             >
-                            <IconMassage {...this.props.greatPlaceCoords} text={'Massage-baby'}/>
+                            <IconMassage {...this.props.greatPlaceCoords} text={''}/>
                         </GoogleMap>
                     </div>
                 </footer>
