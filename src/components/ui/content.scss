@@ -197,6 +197,10 @@ nav {
           display: flex;
           flex-direction: column;
           align-items: center;
+
+          @media only screen and (max-width: 991px) {
+            width: 15%;
+          }
           &:focus{
             outline: none;
           }
@@ -206,6 +210,10 @@ nav {
         }
         & > .slick-slider {
           width: 60%;
+
+          @media only screen and (max-width: 991px) {
+            width: 70%;
+          }
           button[class~="slick-arrow"]{
             display: none !important;
           }
@@ -238,6 +246,10 @@ nav {
               font-size: 15px;
               line-height: 24px;
               color: transparentize($colorInputPrimary, 0.3);
+
+              @media only screen and (max-width: 991px) {
+                width: auto;
+              }
             }
           }
           //Dots
@@ -397,8 +409,14 @@ button.slick-prev, button.slick-next{
     display: flex;
     justify-content: center;
 
-    @media only screen and (min-width: 767px) {
+    @media only screen and (max-width: 991px) {
       flex-direction: column;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
     }
 
     .card {
@@ -408,6 +426,10 @@ button.slick-prev, button.slick-next{
       margin: 0 15px;
       border: 1px solid $colorGreyLight;
       cursor: pointer;
+      @media only screen and (max-width: 991px) {
+        margin: 0 0 25px;
+      }
+
       &__icon{
         margin-bottom: 15px;
       }
@@ -447,6 +469,11 @@ button.slick-prev, button.slick-next{
   padding-bottom: 40px;
   width: 700px;
   margin: auto;
+
+  @media only screen and (max-width: 991px) {
+    width: 100%;
+    margin: 0 15px;
+  }
 
   & > .info-title-description {
     text-align: center;

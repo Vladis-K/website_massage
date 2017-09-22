@@ -171,12 +171,18 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center; }
+        @media only screen and (max-width: 991px) {
+          .content__responds_slider > .container .arrow-respond {
+            width: 15%; } }
         .content__responds_slider > .container .arrow-respond:focus {
           outline: none; }
         .content__responds_slider > .container .arrow-respond_prev > div > img {
           transform: rotate(180deg); }
       .content__responds_slider > .container > .slick-slider {
         width: 60%; }
+        @media only screen and (max-width: 991px) {
+          .content__responds_slider > .container > .slick-slider {
+            width: 70%; } }
         .content__responds_slider > .container > .slick-slider button[class~="slick-arrow"] {
           display: none !important; }
         .content__responds_slider > .container > .slick-slider .slider-content {
@@ -204,6 +210,9 @@ nav {
             font-size: 15px;
             line-height: 24px;
             color: rgba(53, 61, 76, 0.7); }
+            @media only screen and (max-width: 991px) {
+              .content__responds_slider > .container > .slick-slider .slider-content__comment {
+                width: auto; } }
         .content__responds_slider > .container > .slick-slider .slick-dots {
           padding-left: 0;
           padding-top: 20px;
@@ -319,6 +328,14 @@ button.slick-prev, button.slick-next {
     padding-top: 50px;
     display: flex;
     justify-content: center; }
+    @media only screen and (max-width: 991px) {
+      .types .cards {
+        flex-direction: column;
+        align-items: center; } }
+    @media only screen and (max-width: 767px) {
+      .types .cards {
+        flex-direction: column;
+        align-items: center; } }
     .types .cards .card {
       padding: 30px 25px;
       border-radius: 4px;
@@ -326,6 +343,9 @@ button.slick-prev, button.slick-next {
       margin: 0 15px;
       border: 1px solid #e5e8ef;
       cursor: pointer; }
+      @media only screen and (max-width: 991px) {
+        .types .cards .card {
+          margin: 0 0 25px; } }
       .types .cards .card__icon {
         margin-bottom: 15px; }
       .types .cards .card__main {
@@ -357,6 +377,10 @@ button.slick-prev, button.slick-next {
   padding-bottom: 40px;
   width: 700px;
   margin: auto; }
+  @media only screen and (max-width: 991px) {
+    .services {
+      width: 100%;
+      margin: 0 15px; } }
   .services > .info-title-description {
     text-align: center; }
   .services__content {

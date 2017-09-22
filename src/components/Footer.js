@@ -11,9 +11,9 @@ const IconMassage = ({ text }) => <div className="">{text}</div>;
 
 class Footer extends Component {
     static defaultProps = {
-        center: { lat: 51.5766149, lng: -0.1461249},
-        zoom: 17,
-        greatPlaceCoords: {lat: 51.5766149, lng: -0.1461249}
+        center: { lat: 50.5181385, lng: 30.2349632},
+        zoom: 15,
+        greatPlaceCoords: {lat: 50.5181385, lng: 30.2349632}
     };
 
     render() {
@@ -24,16 +24,13 @@ class Footer extends Component {
                         Contact us
                     </div>
                     <div className="google-map">
-                            <GoogleMap
+                        <GoogleMap
                                 center={this.props.center}
                                 zoom={this.props.zoom}
                                 options={{ scrollwheel: false }}
                             >
-                                <IconMassage
-                                    {...this.props.greatPlaceCoords}
-                                    text={'Massage-baby'}
-                                />
-                            </GoogleMap>
+                            <IconMassage {...this.props.greatPlaceCoords} text={'Massage-baby'}/>
+                        </GoogleMap>
                     </div>
                 </footer>
             </div>
