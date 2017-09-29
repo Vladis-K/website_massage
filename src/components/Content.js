@@ -36,7 +36,7 @@ class Content extends Component {
         };
 
         return (
-            <div  id="certificates-list" className="content__outer">
+            <div className="content__outer">
                 <div className="container content__partners">
                     <div className="content__partners_slider">
                         <div className="container">
@@ -88,8 +88,8 @@ class Content extends Component {
             };
 
             return (
-                <div id="certificates">
-                <div  className="certificate">
+                <div >
+                <div id="certificates" className="certificate">
                     <div className="certificate__list">
                         <div className="certificate__list_slider">
                             <div className="container">

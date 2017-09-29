@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700,800|Poppins:300,400,500,600,700");
 @import url(../../../node_modules/font-awesome/css/font-awesome.min.css);
-.transition-all, .navbar .nav-menu-links__item, .navbar .active, .navbar .active:after, .content__responds_slider > .container > .slick-slider .slick-dots, .services__content, .services__content_link, .services__content_link:hover, .services__content_description, .services .icon-view, .services .icon-view-up, button, button:hover {
+.transition-all, .nav-outer, .stick-nav, .content__responds_slider > .container > .slick-slider .slick-dots, .services__content, .services__content_link, .services__content_link:hover, .services__content_description, .services .icon-view, .services .icon-view-up, button, button:hover {
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear; }
@@ -41,7 +41,7 @@ body {
   z-index: 15; }
 
 .stick-nav {
-  background: rgba(173, 177, 183, 0.6); }
+  background: rgba(255, 255, 255, 0.9); }
 
 .navbar {
   display: flex;
@@ -84,7 +84,7 @@ body {
       line-height: 30px; }
   .navbar .active {
     position: relative;
-    color: #fddd01; }
+    color: #fddd01 !important; }
     .navbar .active:after {
       content: '';
       position: absolute;
