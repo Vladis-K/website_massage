@@ -15,6 +15,10 @@
     color: $colorPrimary;
     font-size: 35px;
     font-style: italic;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 20px;
+    }
   }
   & > a  {
     @extend .transition-all;

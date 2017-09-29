@@ -16,23 +16,28 @@ class HomePage extends Component {
     constructor(){
         super();
         this.state = {
-            isLoading: true
-        }
+            isLoading: true,
+        };
     }
+
+
+
 
     componentDidMount() {
-        setTimeout(() => this.setState({isLoading: false}), 800 )
+        setTimeout(() => this.setState({isLoading: false}), 600 );
     }
 
+
     render() {
+        let { scrollClass } = this.state
         return (
             this.state.isLoading ?
                 <Preloader/> : (
-                <div>
+                <div id="home-page" >
                     <Helmet>
                         <title>Home Page</title>
                     </Helmet>
-                    <div className="home-page">
+                    <div className="home-page" >
                         <Navbar />
                         <div className="home-page__curtain"/>
                         <div className="home-page__sign">

@@ -6,15 +6,15 @@
 
 .transition {
   &-all {
-    @include transition(all, 0.5s, linear);
+    @include transition(all, 0.3s, linear);
   }
 
   &-color {
-    @include transition(color, 0.5s, linear);
+    @include transition(color, 0.3s, linear);
   }
 
   &-bg-color {
-    @include transition(background-color, 0.5s, linear);
+    @include transition(background-color, 0.3s, linear);
   }
 
 }

@@ -23,10 +23,11 @@ class Footer extends Component {
 
     render() {
         return (
-            <div className="footer-outer">
+            <div id="contact-us" className="footer-outer">
                 <footer>
                     <div>
-                        Contact us
+                        <div><Logo/></div>
+                        <div>Contact us</div>
                     </div>
                     <div className="google-map">
                         <GoogleMap

@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700,800|Poppins:300,400,500,600,700");
 .transition-all, .m-logo > a {
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear; }
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear; }
 
 .transition-color {
-  transition: color 0.5s linear;
-  -webkit-transition: color 0.5s linear;
-  -moz-transition: color 0.5s linear; }
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear; }
 
 .transition-bg-color {
-  transition: background-color 0.5s linear;
-  -webkit-transition: background-color 0.5s linear;
-  -moz-transition: background-color 0.5s linear; }
+  transition: background-color 0.3s linear;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear; }
 
 /* Nunito */
 /* Popins */
@@ -24,6 +24,9 @@
     color: #fddd01;
     font-size: 35px;
     font-style: italic; }
+    @media only screen and (max-width: 767px) {
+      .m-logo__sign {
+        font-size: 20px; } }
   .m-logo > a {
     text-decoration: none; }
     .m-logo > a > img {

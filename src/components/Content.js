@@ -21,7 +21,6 @@ import Certificate2 from '../data/sertificates/IMG_4770.JPG';
 import Certificate3 from '../data/sertificates/IMG_4771.JPG';
 
 
-
 class Content extends Component {
 
     getPartners() {
@@ -37,7 +36,7 @@ class Content extends Component {
         };
 
         return (
-            <div className="content__outer">
+            <div  id="certificates-list" className="content__outer">
                 <div className="container content__partners">
                     <div className="content__partners_slider">
                         <div className="container">
@@ -89,7 +88,8 @@ class Content extends Component {
             };
 
             return (
-                <div className="certificate">
+                <div id="certificates">
+                <div  className="certificate">
                     <div className="certificate__list">
                         <div className="certificate__list_slider">
                             <div className="container">
@@ -138,6 +138,7 @@ class Content extends Component {
                         </div>
                     </div>
                 </div>
+                </div>
             );
         }
 
@@ -169,7 +170,7 @@ class Content extends Component {
         };
 
         return (
-            <div className="content__outer">
+            <div id="reviews" className="content__outer">
                 <div className="container content__responds">
                     <div className="content__responds_sign">Reviews</div>
                     <div className="content__responds_slider">
@@ -255,7 +256,7 @@ class Content extends Component {
 }
 
 const TypeMsg = () => (
-    <div className="types">
+    <div id="massage-types" className="types">
         <div className="info-title">Types of massage</div>
         <div className="info-title-description">Provide different massage techniques
             <br/>that will allowyour child to develop properly
@@ -318,7 +319,7 @@ class GetServices extends Component{
     render(){
         const shown = this.state.shown;
         return(
-            <div className="services">
+            <div id="services" className="services">
                 <div className="info-title">Services</div>
                 <div className="info-title-description">Different techniques of massage for your child</div>
 
