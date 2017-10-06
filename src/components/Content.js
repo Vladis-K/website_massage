@@ -93,16 +93,13 @@ class Content extends Component {
                     <div className="certificate__list">
                         <div className="certificate__list_slider">
                             <div className="container">
-                                <div className="arrow-certificate certificate_prev hidden-desktop">
-                                        <img src={ArrowSlide} onClick={() => this.prevCertificate()} />
-                                </div>
                                 <Slider ref={c => this.showSertificates = c } {...settings}>
                                     <div>
                                         <div className="certificate__item">
                                             <div className="certificate__item_scan">
                                                <img className="home-page__campaigns_pict" src={Certificate1} alt="" />
                                            </div>
-                                            <div className="certificate__info">
+                                            <div className="certificate__info hidden-mobile">
                                                 <div className="certificate__info_title">Title</div>
                                                 <div className="certificate__info_about">Description</div>
                                             </div>
@@ -113,7 +110,7 @@ class Content extends Component {
                                             <div className="certificate__item_scan">
                                                 <img className="home-page__campaigns_pict" src={Certificate2} alt="" />
                                             </div>
-                                            <div className="certificate__info">
+                                            <div className="certificate__info hidden-mobile">
                                                 <div className="certificate__info_title">Title</div>
                                                 <div className="certificate__info_about">Description</div>
                                             </div>
@@ -124,7 +121,7 @@ class Content extends Component {
                                             <div className="certificate__item_scan">
                                                 <img className="home-page__campaigns_pict" src={Certificate3} alt="" />
                                             </div>
-                                            <div className="certificate__info">
+                                            <div className="certificate__info hidden-mobile">
                                                 <div className="certificate__info_title">Title</div>
                                                 <div className="certificate__info_about">Description</div>
                                             </div>

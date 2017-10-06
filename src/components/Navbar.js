@@ -4,7 +4,6 @@ import Logo from './logo/Logo';
 import Scroll from 'react-scroll';
 
 var Link       = Scroll.Link;
-var Element    = Scroll.Element;
 var Events     = Scroll.Events;
 var scroll     = Scroll.animateScroll;
 var scrollSpy  = Scroll.scrollSpy;
@@ -34,12 +33,17 @@ class Navbar extends Component {
         );
     }
 
+    changeOpacity = () => {
+        this.setState({
+            isTop: window.scrollY < 70
+        })
+    };
+
     componentDidMount() {
-        document.addEventListener('scroll', () => {
-            this.setState({ isTop: window.scrollY < 70 })
-        });
+        document.addEventListener('scroll', this.changeOpacity);
         scrollSpy.update();
     }
+
     scrollToTop() {
         scroll.scrollToTop();
     }
@@ -47,6 +51,7 @@ class Navbar extends Component {
     componentWillUnmount() {
         Events.scrollEvent.remove('begin');
         Events.scrollEvent.remove('end');
+        document.removeEventListener('scroll', this.changeOpacity);
     }
 
 
@@ -57,13 +62,13 @@ class Navbar extends Component {
                   <div className="nav-menu-logo">
                     <Logo/>
                   </div>
-                  <div className="nav-menu-links">
-                      <Link className="nav-menu-links__item" activeClass="active" to="home-page" spy={true} smooth={true}  offset={0} duration={600}>Home</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="massage-types" spy={true} smooth={true} offset={-70} duration={600}>Types</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="certificates" spy={true} smooth={true} offset={-70} duration={600} >Certificates</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="services" spy={true} smooth={true} offset={-70} duration={600}>Services</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="reviews" spy={true} smooth={true} offset={-70} duration={600}>Reviews</Link>
-                     <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} smooth={true} offset={-70} duration={600}>Contacts</Link>
+                  <div className="nav-menu-links hidden-mobile">
+                      <Link className="nav-menu-links__item" activeClass="active" to="home-page" spy={true} smooth={true} duration={600}>Home</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="massage-types" spy={true} smooth={true} duration={600}>Types</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="certificates" spy={true} smooth={true} duration={600} >Certificates</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="services" spy={true} smooth={true} duration={600}>Services</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="reviews" spy={true} smooth={true}  duration={600}>Reviews</Link>
+                     <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} smooth={true} duration={600}>Contacts</Link>
                   </div>
                   <div className={`nav-menu hidden-desktop ${this.state.visible ? 'hidden-content' : ''}`}
                        onClick={this.sideMenuVisible}

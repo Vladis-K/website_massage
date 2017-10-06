@@ -33,6 +33,10 @@ body {
   right: 0;
   z-index: 15;
   @extend .transition-all;
+
+  @media only screen and (max-width: 767px) {
+    padding: 0 0;
+  }
 }
 
 .stick-nav{
@@ -65,6 +69,10 @@ body {
     justify-content: flex-end;
     cursor: pointer;
     z-index: 19;
+
+    @media only screen and (max-width: 767px) {
+      justify-content: center;
+    }
     &__show{
       & > i {
         font-size: 25px;
@@ -197,6 +205,9 @@ body {
     color: $colorSecondary;
     text-align: center;
     padding-top: 80vh;
+    @media only screen and (max-width: 767px) {
+      padding-top: 64vh;
+    }
     & > span > h1 {
       margin: 0;
       font-size: 50px;
@@ -278,7 +289,7 @@ body {
           width: 90%;
 
           @media only screen and (max-width: 767px) {
-            width: 60%;
+            width: 250px;
           }
 
           button[class~="slick-arrow"]{
@@ -447,6 +458,10 @@ body {
 .certificate{
   background-color: $colorInputPrimary;
   padding: 40px 0 0;
+
+  @media only screen and (max-width: 991px) {
+    padding: 40px 15px 0;
+  }
   &__list {
     padding-top: 15px;
     &_slider {
@@ -457,6 +472,11 @@ body {
         margin: auto;
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width: 991px) {
+          width: 100%;
+        }
+
         .arrow-certificate {
           cursor: pointer;
           width: 35px;
@@ -476,6 +496,10 @@ body {
         }
         & > .slick-initialized {
           width: 90%;
+
+          @media only screen and (max-width: 767px) {
+            width: 80%;
+          }
           button[class~="slick-arrow"]{
             display: none !important;
           }
@@ -502,12 +526,23 @@ body {
     display: flex;
     &_scan {
       width: 690px;
+
+      @media only screen and (max-width: 991px) {
+        width: 100%;
+      }
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+      }
       & > img {
         width: 100%;
         outline: none;
         user-select: none;
+
         @media only screen and (max-width: 991px) {
-          width: 80vw;
+          width: auto;
+        }
+        @media only screen and (max-width: 767px) {
+          width: 100%;
         }
       }
     }
@@ -544,7 +579,7 @@ button.slick-prev, button.slick-next{
   text-align: center;
 
   @media only screen and (max-width: 767px) {
-    padding-top: 60px;
+    padding: 60px 15px 0;
   }
   .cards{
     padding-top: 50px;
@@ -571,7 +606,9 @@ button.slick-prev, button.slick-next{
       @media only screen and (max-width: 991px) {
         margin: 0 0 25px;
       }
-
+      @media only screen and (max-width: 767px) {
+        width: auto;
+      }
       &__icon{
         margin-bottom: 15px;
       }
@@ -607,14 +644,15 @@ button.slick-prev, button.slick-next{
 }
 
 .services{
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   width: 700px;
   margin: auto;
 
   @media only screen and (max-width: 991px) {
-    width: 100%;
-    margin: 0 15px;
+    width: auto;
+    margin: 0;
+    padding: 0 15px 40px;
   }
 
   & > .info-title-description {
@@ -680,17 +718,36 @@ button.slick-prev, button.slick-next{
 
 //Footer
 .footer-outer{
+  .contact-us{
+    &__info{
+      width: 900px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
 
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+        width: auto;
+      }
+    }
+  }
 }
 
 footer {
   padding: 25px;
   background-color: $colorInputPrimary;
-  display: flex;
-  justify-content: space-between;
   .google-map{
     width: 400px;
     height: 200px;
+
+    @media only screen and (max-width: 767px) {
+      width: auto;
+    }
+    @media only screen and (max-width: 767px) {
+      & > div > div {
+        width: auto;
+      }
+    }
   }
   .google-m-logo{
     @include nunitoBold;
@@ -759,4 +816,9 @@ input:focus{
   background-color: #b277fe;
   color: #60d712;
   z-index: 10;
+}
+
+.contact-icon{
+  width: 30px;
+  height: auto;
 }
