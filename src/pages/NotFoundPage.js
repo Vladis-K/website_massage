@@ -7,6 +7,7 @@ const NotFoundPage = () => (
         <Helmet>
             <title>404 Not Found</title>
         </Helmet>
+
             <div className="page-not-found">
                 <div className="page-not-found__sign">Sorry... Page not Found!</div>
                 <div className="page-not-found__description">

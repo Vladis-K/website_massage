@@ -35,7 +35,7 @@ class Navbar extends Component {
 
     changeOpacity = () => {
         this.setState({
-            isTop: window.scrollY < 70
+            isTop: window.scrollY < 70,
         })
     };
 
@@ -63,12 +63,12 @@ class Navbar extends Component {
                     <Logo/>
                   </div>
                   <div className="nav-menu-links hidden-mobile">
-                      <Link className="nav-menu-links__item" activeClass="active" to="home-page" spy={true} smooth={true} duration={600}>Home</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="massage-types" spy={true} smooth={true} duration={600}>Types</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="certificates" spy={true} smooth={true} duration={600} >Certificates</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="services" spy={true} smooth={true} duration={600}>Services</Link>
-                      <Link className="nav-menu-links__item" activeClass="active" to="reviews" spy={true} smooth={true}  duration={600}>Reviews</Link>
-                     <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} smooth={true} duration={600}>Contacts</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="home-page" spy={true} offset={0} smooth={true} duration={600}>Home</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="massage-types" spy={true} offset={0} smooth={true} duration={600}>Types</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="certificates" spy={true} offset={0} smooth={true} duration={600} >Certificates</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="services" spy={true} offset={0} smooth={true} duration={600}>Services</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="reviews" spy={true} offset={0} smooth={true}  duration={600}>Reviews</Link>
+                     <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} offset={0} smooth={true} duration={600}>Contacts</Link>
                   </div>
                   <div className={`nav-menu hidden-desktop ${this.state.visible ? 'hidden-content' : ''}`}
                        onClick={this.sideMenuVisible}
@@ -82,7 +82,10 @@ class Navbar extends Component {
                       menuIsVisible={this.sideMenuVisible}
                   />
               </div>
-              <ScrollTop scrollTop={this.scrollToTop}/>
+                <div className={`hidden-mobile ${this.state.isTop ? 'hidden-content' : ''}`}>
+                  <ScrollTop
+                      scrollTop={this.scrollToTop}
+                  /></div>
             </div>
         );
     }
@@ -93,15 +96,22 @@ class SidePanel extends Component {
     render(){
         return(
             <div className={`side-panel ${this.props.visible ? '' : 'hidden-content'}`}>
-                <div className="side-panel__">
-                    <div onClick={this.props.menuIsVisible}>X</div>
+                <div className="side-panel__close">
+                    <div onClick={this.props.menuIsVisible}><i className="fa fa-times side-panel__close_icon" aria-hidden="true"/></div>
                 </div>
-                <div className="side-panel__menu">
-                    <div>Types of massage</div>
-                    <div>Certificates</div>
-                    <div>Services</div>
-                    <div>Reviews</div>
-                    <div>Contacts</div>
+                <div className="nav-menu-links side-panel__menu">
+                    <Link className="side-panel__menu_mob-links" to="home-page" smooth={true} duration={600}
+                        onClick={this.props.menuIsVisible}>Home</Link>
+                    <Link className="side-panel__menu_mob-links" to="massage-types" smooth={true}  offset={-70} duration={600}
+                        onClick={this.props.menuIsVisible}>Types</Link>
+                    <Link className="side-panel__menu_mob-links" to="certificates" smooth={true}  offset={-70} duration={600}
+                          onClick={this.props.menuIsVisible}>Certificates</Link>
+                    <Link className="side-panel__menu_mob-links" to="services" smooth={true}  offset={-70} duration={600}
+                          onClick={this.props.menuIsVisible}>Services</Link>
+                    <Link className="side-panel__menu_mob-links" to="reviews" smooth={true}  offset={-70} duration={600}
+                          onClick={this.props.menuIsVisible}>Reviews</Link>
+                    <Link className="side-panel__menu_mob-links" to="contact-us" smooth={true}  offset={-70} duration={600}
+                          onClick={this.props.menuIsVisible}>Contacts</Link>
                 </div>
             </div>
         )

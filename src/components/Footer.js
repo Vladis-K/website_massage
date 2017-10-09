@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
 import Logo from './logo/Logo';
-import LocationIcon from './ui/assets/LocationIcon'
 
 
 import './ui/content.css';
@@ -28,20 +27,32 @@ class Footer extends Component {
                 <footer>
                     <div className="container contact-us__info">
                         <div className="contact-us">
-                            <div><Logo/></div>
+                            <div className="contact-us__logo-footer"><Logo/></div>
                             <div className="contact-us__sign">Contact us</div>
                             <div className="contact-us__coordinates">
-                                <div className="contact-us__coordinates_">
-                                    <span className="contact-icon" dangerouslySetInnerHTML={{ __html: LocationIcon }} />
-                                </div>
-                                <div>
-                                    <span>Kiyv</span>
-                                    <span>Irpin</span>
-                                    <span>Bucha</span>
+                                <div className="">
+                                    <div className="contact-us-info">
+                                        <span><i className="fa fa-location-arrow" aria-hidden="true"/></span>
+                                        <span>Kiyv</span>
+                                    </div>
+                                    <div className="contact-us-info">
+                                        <span><i className="fa fa-location-arrow" aria-hidden="true"/></span>
+                                        <span>Irpin</span>
+                                    </div>
+                                    <div className="contact-us-info">
+                                        <span><i className="fa fa-location-arrow" aria-hidden="true"/></span>
+                                        <span>Bucha</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div><a href="tel:+380993238099">Tel. 099 323 8099</a></div>
-                            <div><a href="mailto:ohmatdet.ko@gmail.com">ohmatdet.ko@gmail.com</a></div>
+                            <div className="contact-us-info">
+                                <span><i className="fa fa-phone" aria-hidden="true"/></span>
+                                <a href="tel:+380993238099">Tel. 099 323 8099</a>
+                            </div>
+                            <div className="contact-us-info">
+                                <span><i className="fa fa-envelope-open-o" aria-hidden="true"/></span>
+                                <a href="mailto:ohmatdet.ko@gmail.com">ohmatdet.ko@gmail.com</a>
+                            </div>
                         </div>
                         <div className="google-map">
                             <GoogleMap

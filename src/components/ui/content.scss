@@ -34,8 +34,11 @@ body {
   z-index: 15;
   @extend .transition-all;
 
+  @media only screen and (max-width: 1199px) {
+    padding: 0 15px;
+  }
   @media only screen and (max-width: 767px) {
-    padding: 0 0;
+    padding: 0;
   }
 }
 
@@ -52,6 +55,10 @@ body {
   background-color: transparent;
   z-index: 16;
 
+  @media only screen and (max-width: 1199px) {
+    width: auto;
+  }
+
   @media only screen and (max-width: 767px) {
     width: auto;
     margin: 0;
@@ -61,6 +68,10 @@ body {
   //Outer for navbar logo
   .nav-menu-logo{
     padding: 15px 15px 0;
+
+    @media only screen and (max-width: 767px) {
+      padding: 0;
+    }
   }
 
   .nav-menu{
@@ -71,7 +82,8 @@ body {
     z-index: 19;
 
     @media only screen and (max-width: 767px) {
-      justify-content: center;
+      justify-content: flex-start;
+      padding-top: 13px;
     }
     &__show{
       & > i {
@@ -90,6 +102,17 @@ body {
       align-items: center;
       cursor: pointer;
       margin: 0 5px;
+
+
+      @media only screen and (max-width: 1199px) {
+        font-size: 15px;
+        width: 75px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        justify-content: flex-start;
+      }
+
     }
     & > div {
       & > a {
@@ -121,7 +144,6 @@ body {
     }
   }
   .side-panel{
-    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
@@ -129,9 +151,32 @@ body {
     height: 100vh;
     width: 300px;
     background-color: rgba(53, 61, 76, 0.98);
+    cursor: pointer;
 
     @media only screen and (max-width: 767px) {
       width: 100%;
+    }
+
+    &__close{
+      padding: 25px 30px 15px;
+      display: flex;
+      justify-content: flex-end;
+      &_icon{
+        font-size: 30px;
+        color: transparentize($colorDefault, .4);
+      }
+    }
+    &__menu{
+      padding: 15px 30px;
+      display: flex;
+      flex-direction: column;
+      &_mob-links{
+        @include nunitoLight;
+        color: transparentize($colorDefault, .4);
+        font-size: 18px;
+        line-height: 40px;
+
+      }
     }
   }
 }
@@ -205,12 +250,21 @@ body {
     color: $colorSecondary;
     text-align: center;
     padding-top: 80vh;
+
+    @media only screen and (max-width: 991px) {
+      padding-top: 70vh;
+    }
+
     @media only screen and (max-width: 767px) {
       padding-top: 64vh;
     }
     & > span > h1 {
       margin: 0;
       font-size: 50px;
+
+      @media only screen and (max-width: 991px) {
+        font-size: 40px;
+      }
 
       @media only screen and (max-width: 767px) {
         font-size: 40px;
@@ -219,6 +273,10 @@ body {
     & > span > h2{
       margin: 0;
       font-size: 30px;
+
+      @media only screen and (max-width: 99px) {
+        font-size: 25px;
+      }
       @media only screen and (max-width: 767px) {
         font-size: 20px;
       }
@@ -473,6 +531,10 @@ body {
         display: flex;
         justify-content: space-between;
 
+        @media only screen and (max-width: 1199px) {
+          width: 90%;
+        }
+
         @media only screen and (max-width: 991px) {
           width: 100%;
         }
@@ -527,6 +589,9 @@ body {
     &_scan {
       width: 690px;
 
+      @media only screen and (max-width: 1199px) {
+        width: 690px;
+      }
       @media only screen and (max-width: 991px) {
         width: 100%;
       }
@@ -538,8 +603,12 @@ body {
         outline: none;
         user-select: none;
 
+        @media only screen and (max-width: 1199px) {
+          width: 100%;
+        }
+
         @media only screen and (max-width: 991px) {
-          width: auto;
+          width: 100%;
         }
         @media only screen and (max-width: 767px) {
           width: 100%;
@@ -587,8 +656,8 @@ button.slick-prev, button.slick-next{
     justify-content: center;
 
     @media only screen and (max-width: 991px) {
-      flex-direction: column;
-      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     @media only screen and (max-width: 767px) {
@@ -603,8 +672,10 @@ button.slick-prev, button.slick-next{
       margin: 0 15px;
       border: 1px solid $colorGreyLight;
       cursor: pointer;
+
       @media only screen and (max-width: 991px) {
-        margin: 0 0 25px;
+        padding: 30px 15px;
+        margin: 0 5px 25px;
       }
       @media only screen and (max-width: 767px) {
         width: auto;
@@ -652,7 +723,7 @@ button.slick-prev, button.slick-next{
   @media only screen and (max-width: 991px) {
     width: auto;
     margin: 0;
-    padding: 0 15px 40px;
+    padding: 40px 15px;
   }
 
   & > .info-title-description {
@@ -719,17 +790,54 @@ button.slick-prev, button.slick-next{
 //Footer
 .footer-outer{
   .contact-us{
+
+    @media only screen and (max-width: 767px) {
+      padding-bottom: 15px;
+    }
+    &__logo-footer > .m-logo {
+      transform: scale(0.7);
+      margin-left: -35px;
+
+      @media only screen and (max-width: 767px) {
+        transform: scale(0.8);
+        margin-left: -30px;
+        padding-bottom: 30px;
+      }
+    }
+    &__sign{
+      color: $colorDefault;
+      font-size: 22px;
+      line-height: 26px;
+      padding-bottom: 10px;
+    }
     &__info{
       width: 900px;
       margin: auto;
       display: flex;
       justify-content: space-between;
 
+      @media only screen and (max-width: 1199px) {
+        width: 670px;
+      }
+
       @media only screen and (max-width: 767px) {
         flex-direction: column;
         width: auto;
       }
     }
+      .contact-us-info, .contact-us-info a  {
+        @include nunitoLight;
+
+        cursor: default;
+        color: $colorDefault;
+        line-height: 26px;
+        user-select: none;
+        opacity: 0.7;
+        text-decoration: none;
+        & > span:first-child{
+          padding-right: 10px;
+        }
+      }
   }
 }
 

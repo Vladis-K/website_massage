@@ -20,16 +20,11 @@ class HomePage extends Component {
         };
     }
 
-
-
-
     componentDidMount() {
         setTimeout(() => this.setState({isLoading: false}), 600 );
     }
 
-
     render() {
-        let { scrollClass } = this.state
         return (
             this.state.isLoading ?
                 <Preloader/> : (
