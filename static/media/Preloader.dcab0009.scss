@@ -1,0 +1,16 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+.preloader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  &__inner{
+    & > i {
+      color: $colorSuccess;
+      font-size: 30px;
+    }
+  }
+}
