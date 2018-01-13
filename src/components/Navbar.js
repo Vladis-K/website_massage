@@ -68,7 +68,8 @@ class Navbar extends Component {
                       <Link className="nav-menu-links__item" activeClass="active" to="certificates" spy={true} offset={0} smooth={true} duration={600} >Certificates</Link>
                       <Link className="nav-menu-links__item" activeClass="active" to="services" spy={true} offset={0} smooth={true} duration={600}>Services</Link>
                       <Link className="nav-menu-links__item" activeClass="active" to="reviews" spy={true} offset={0} smooth={true}  duration={600}>Reviews</Link>
-                     <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} offset={0} smooth={true} duration={600}>Contacts</Link>
+                      <Link className="nav-menu-links__item" activeClass="active" to="contact-us" spy={true} offset={0} smooth={true} duration={600}>Contacts</Link>
+                      <div className="" onClick={() => this.props.history.push('/home/en')}>En</div>
                   </div>
                   <div className={`nav-menu hidden-desktop ${this.state.visible ? 'hidden-content' : ''}`}
                        onClick={this.sideMenuVisible}

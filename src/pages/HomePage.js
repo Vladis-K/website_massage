@@ -28,12 +28,12 @@ class HomePage extends Component {
         return (
             this.state.isLoading ?
                 <Preloader/> : (
-                <div id="home-page" >
+                <div id="home-page">
                     <Helmet>
                         <title>Home Page</title>
                     </Helmet>
                     <div className="home-page" >
-                        <Navbar />
+                        <Navbar history={this.props.history}/>
                         <div className="home-page__curtain"/>
                         <div className="home-page__sign">
                             <ReactCSSTransitionGroup
